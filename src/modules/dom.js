@@ -2,8 +2,8 @@
 
 function makeEle(tag, className, textContent) {
   const ele = document.createElement(tag);
-  ele.classList.add(className);
-  ele.textContent = textContent;
+  if (className != undefined) ele.classList.add(className);
+  if (textContent != undefined) ele.textContent = textContent;
   return ele;
 }
 
@@ -28,7 +28,7 @@ function renderSite() {
 
   const anticipationDiv = makeEle('div', '', 'Hidden Number is ...');
 
-  const buttonsDiv = makeEle('div', 'buttons-div');
+  const buttonsDiv = makeEle('div', 'buttons-div', '');
 }
 
 export { renderSite };
