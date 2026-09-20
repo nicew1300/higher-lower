@@ -1,4 +1,6 @@
 import './styles/global.css';
 import { renderSite } from './modules/dom.js';
 
-renderSite();
+const elements = renderSite();
+
+export default elements;

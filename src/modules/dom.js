@@ -54,7 +54,15 @@ function renderSite() {
   );
   appendChildren(buttonsDiv, lowerButton, hiddenNumber, higherButton);
 
-  console.log('hi lol');
+  return {
+    resultDiv,
+    currentNumberDiv,
+    hiddenNumber,
+    lowerButton,
+    higherButton,
+    scoreDiv,
+    bestDiv,
+  };
 }
 
 export { renderSite };
