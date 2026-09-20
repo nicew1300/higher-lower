@@ -1,0 +1,1 @@
+// make a function that types out the three dots at "Hidden number is ..." continously, with a delay of 500ms between each dot, and then resets after the third dot. Use setInterval and clearInterval to do this twin, you can use a variable to keep track of the number of dots currently displayed, and update the text content of the element accordingly
