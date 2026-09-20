@@ -2,8 +2,8 @@
 
 function makeEle(tag, className, textContent) {
   const ele = document.createElement(tag);
-  if (className != undefined) ele.classList.add(className);
-  if (textContent != undefined) ele.textContent = textContent;
+  ele.classList.add(className);
+  ele.textContent = textContent;
   return ele;
 }
 
