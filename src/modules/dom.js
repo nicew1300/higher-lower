@@ -2,7 +2,7 @@
 
 function makeEle(tag, className, textContent) {
   const ele = document.createElement(tag);
-  ele.classList.add(className);
+  if (className != '') ele.classList.add(className);
   ele.textContent = textContent;
   return ele;
 }
@@ -42,7 +42,19 @@ function renderSite() {
 
   body.appendChild(wrapper);
   appendChildren(wrapper, header, gameBoardDiv);
-  header.appendChild(span);
+  appendChildren(header, howTitleDiv, tutorialDiv);
+  appendChildren(
+    gameBoardDiv,
+    currentNumberDiv,
+    anticipationDiv,
+    buttonsDiv,
+    resultDiv,
+    scoreDiv,
+    bestDiv,
+  );
+  appendChildren(buttonsDiv, lowerButton, hiddenNumber, higherButton);
+
+  console.log('hi lol');
 }
 
 export { renderSite };
