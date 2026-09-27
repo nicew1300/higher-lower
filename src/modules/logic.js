@@ -78,21 +78,17 @@ function updateResult(outcome) {
 
   if (outcome === 1) {
     resultDiv.textContent = 'YOOO LETS GOOO';
-    resultDiv.classList.add('result-div-won');
     setTimeout(() => {
       resultDiv.style.opacity = 0;
       resultDiv.style.transform = 'scale(1)';
       resultDiv.textContent = '';
-      resultDiv.classList.remove('result-div-won');
     }, 1000);
   } else {
     resultDiv.textContent = 'NOOO DUDE FUCKKK';
-    resultDiv.classList.add('result-div-lost');
     setTimeout(() => {
       resultDiv.style.opacity = 0;
       resultDiv.style.transform = 'scale(1)';
       resultDiv.textContent = '';
-      resultDiv.classList.remove('result-div-lost');
     }, 1000);
   }
 }
