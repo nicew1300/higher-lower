@@ -76,22 +76,6 @@ header {
   transition: all 1s ease-in-out;
 }
 
-.result-div-won {
-  color: #00ff00;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.25rem;
-  transition: all 1s ease-in-out;
-}
-
-.result-div-lost {
-  color: #ff0000;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  padding: 0.25rem;
-  transition: all 1s ease-in-out;
-}
-
 .how-title {
   font-size: 1.5rem;
   color: #dc91ca;
