@@ -71,28 +71,6 @@ function showHiddenNumber(outcome) {
   updateResult(outcome);
 }
 
-// we then want to update the result after each round
-function updateResult(outcome) {
-  resultDiv.style.opacity = 1;
-  resultDiv.style.transform = 'scale(1.2)';
-
-  if (outcome === 1) {
-    resultDiv.textContent = 'YOOO LETS GOOO';
-    setTimeout(() => {
-      resultDiv.style.opacity = 0;
-      resultDiv.style.transform = 'scale(1)';
-      resultDiv.textContent = '';
-    }, 1000);
-  } else {
-    resultDiv.textContent = 'NOOO DUDE FUCKKK';
-    setTimeout(() => {
-      resultDiv.style.opacity = 0;
-      resultDiv.style.transform = 'scale(1)';
-      resultDiv.textContent = '';
-    }, 1000);
-  }
-}
-
 // we then want to update the score after each round
 function updateScore(outcome) {
   if (outcome === 1) {
@@ -101,6 +79,32 @@ function updateScore(outcome) {
     updateResult(outcome);
   } else {
     updateResult(outcome);
+  }
+}
+
+// we then lastly want to update the result after each round
+function updateResult(outcome) {
+  if (outcome === 1) {
+    resultDiv.textContent = 'YOOO LETS GOOO';
+    resultDiv.style.opacity = 1;
+    resultDiv.style.color = '#00ff00';
+
+    setTimeout(() => {
+      resultDiv.style.opacity = 0;
+      resultDiv.style.transform = 'scale(1)';
+      resultDiv.textContent = '';
+    }, 1000);
+  } else {
+    resultDiv.textContent = 'NOOO DUDE FUCKKK';
+    resultDiv.style.opacity = 1;
+    resultDiv.style.color = '#ff0000';
+    resultDiv.style.position = 'absolute';
+
+    setTimeout(() => {
+      resultDiv.style.opacity = 0;
+      resultDiv.style.transform = 'scale(1)';
+      resultDiv.textContent = '';
+    }, 1000);
   }
 }
 
