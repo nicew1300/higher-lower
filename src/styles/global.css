@@ -49,6 +49,49 @@ header {
   width: 100%;
 }
 
+.current-number {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #e6d3eb;
+  background-color: #29c7f3;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: 2px solid #1d1bb0;
+}
+
+.hidden-number {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #9592fc;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  /* for the fade effects: */
+  transition: all 1s ease-in-out;
+}
+
+.result-div {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 0.25rem;
+  transition: all 1s ease-in-out;
+}
+
+.result-div-won {
+  color: #00ff00;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 0.25rem;
+  transition: all 1s ease-in-out;
+}
+
+.result-div-lost {
+  color: #ff0000;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 0.25rem;
+  transition: all 1s ease-in-out;
+}
+
 .how-title {
   font-size: 1.5rem;
   color: #dc91ca;
@@ -88,11 +131,6 @@ button:active {
   transform: scale(1.2);
   /* display: absolute; */
   padding: 0.5rem 1rem;
-}
-
-.current-number {
-  font-size: 2rem;
-  font-weight: bolder;
 }
 
 .result {

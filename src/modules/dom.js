@@ -1,5 +1,3 @@
-// now, make what you wrote in template.html here in javascript, so that we can use it in the game logic and also so you learn react concepts
-
 function makeEle(tag, className, textContent) {
   const ele = document.createElement(tag);
   if (className != '') ele.classList.add(className);
@@ -34,11 +32,15 @@ function renderSite() {
   const anticipationDiv = makeEle('div', '', 'Hidden Number is ...');
   const buttonsDiv = makeEle('div', 'buttons-div', '');
   const lowerButton = makeEle('button', 'lower', 'LOWER');
-  const hiddenNumber = makeEle('div', 'hidden-number', '10');
+  const hiddenNumberDiv = makeEle('div', 'hidden-number', '10');
   const higherButton = makeEle('button', 'higher', 'HIGHER');
-  const resultDiv = makeEle('div', 'result', 'FUCK');
-  const scoreDiv = makeEle('div', 'score', 'Score :3');
+  const resultDiv = makeEle('div', 'result', '');
+  const scoreDiv = makeEle('div', 'score', 'Score : 0');
   const bestDiv = makeEle('div', 'best', 'Best: 10');
+
+  // get the numbers in:
+  // hiddenNumberDiv.textContent = generateRandomNumber();
+  // currentNumberDiv.textContent = generateRandomNumber();
 
   body.appendChild(wrapper);
   appendChildren(wrapper, header, gameBoardDiv);
@@ -52,12 +54,12 @@ function renderSite() {
     scoreDiv,
     bestDiv,
   );
-  appendChildren(buttonsDiv, lowerButton, hiddenNumber, higherButton);
+  appendChildren(buttonsDiv, lowerButton, hiddenNumberDiv, higherButton);
 
   return {
     resultDiv,
     currentNumberDiv,
-    hiddenNumber,
+    hiddenNumberDiv,
     lowerButton,
     higherButton,
     scoreDiv,
