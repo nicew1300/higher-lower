@@ -70,6 +70,8 @@ function updateScore(outcome) {
     scoreDiv.textContent = `Score: ${score}`;
     updateResult(outcome);
   } else {
+    score = 0;
+    scoreDiv.textContent = `Score: ${score}`;
     updateResult(outcome);
   }
 }
