@@ -57,7 +57,7 @@ function showHiddenNumber(outcome) {
   setTimeout(() => {
     hiddenNumberDiv.style.opacity = 0;
     hiddenNumberDiv.style.transform = 'scale(1)';
-    updateNumbers();
+    setTimeout(updateNumbers, 1000);
   }, 1000);
 
   updateResult(outcome);
