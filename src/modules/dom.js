@@ -29,7 +29,7 @@ function renderSite() {
 
   const gameBoardDiv = makeEle('div', 'game-board', '');
   const currentNumberDiv = makeEle('div', 'current-number', '67');
-  const anticipationDiv = makeEle('div', '', 'Hidden Number is ...');
+  const anticipationDiv = makeEle('div', '', 'Hidden Number was ...');
   const buttonsDiv = makeEle('div', 'buttons-div', '');
   const lowerButton = makeEle('button', 'lower', 'LOWER');
   const hiddenNumberDiv = makeEle('div', 'hidden-number', '10');

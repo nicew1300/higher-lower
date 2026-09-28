@@ -5,7 +5,7 @@ let hiddenNumberDiv;
 let resultDiv;
 let scoreDiv;
 
-let score = '';
+let score = 0;
 
 // Adding initializeGame() in logic.js, so DOM queries happen after rendering
 // Calling it after renderSite() in index.js
@@ -38,25 +38,16 @@ function initializeGame() {
 
 function compareNumbers(currentNumber, hiddenNumber, whichButton) {
   // 1 means you won, 0 means you lost
-  let outcome = '';
-
-  if (currentNumber <= hiddenNumber && whichButton === 'lower') {
-    outcome = 1;
-  }
-  if (currentNumber <= hiddenNumber && whichButton === 'higher') {
-    outcome = 0;
-  }
-
-  if (currentNumber >= hiddenNumber && whichButton === 'lower') {
-    outcome = 1;
-  }
-  if (currentNumber >= hiddenNumber && whichButton === 'higher') {
-    outcome = 0;
-  }
+  const current = Number(currentNumber);
+  const hidden = Number(hiddenNumber);
+  const outcome =
+    (whichButton === 'lower' && hidden < current) ||
+    (whichButton === 'higher' && hidden > current)
+      ? 1
+      : 0;
 
   updateScore(outcome);
   showHiddenNumber(outcome);
-  updateNumbers(outcome);
 }
 
 // we now want to show what happened after the player pressed a button, so we will update the resultDiv with the outcome of the round and quickly show the hidden number with a fade in and fade out effect, so the player can see what the hidden number was after they pressed a button
@@ -66,6 +57,7 @@ function showHiddenNumber(outcome) {
   setTimeout(() => {
     hiddenNumberDiv.style.opacity = 0;
     hiddenNumberDiv.style.transform = 'scale(1)';
+    updateNumbers();
   }, 1000);
 
   updateResult(outcome);
@@ -91,18 +83,15 @@ function updateResult(outcome) {
 
     setTimeout(() => {
       resultDiv.style.opacity = 0;
-      resultDiv.style.transform = 'scale(1)';
       resultDiv.textContent = '';
     }, 1000);
   } else {
     resultDiv.textContent = 'NOOO DUDE FUCKKK';
     resultDiv.style.opacity = 1;
     resultDiv.style.color = '#ff0000';
-    resultDiv.style.position = 'absolute';
 
     setTimeout(() => {
       resultDiv.style.opacity = 0;
-      resultDiv.style.transform = 'scale(1)';
       resultDiv.textContent = '';
     }, 1000);
   }
@@ -113,7 +102,7 @@ function generateRandomNumber() {
 }
 
 // after everything has been shown, we start a new round by changing the numbers
-function updateNumbers(outcome) {
+function updateNumbers() {
   // get a random number between 0 and 100 and set it as the current number
   const newCurrentNumber = generateRandomNumber();
   currentNumberDiv.textContent = newCurrentNumber;
